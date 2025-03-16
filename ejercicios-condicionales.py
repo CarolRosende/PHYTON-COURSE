@@ -147,50 +147,62 @@ else:
     print(f"{ng_año} no es un año bisiesto")
 
 
-"""Ejercicio 8: Clasificación de notas
-Escribe un programa que pida al usuario una nota (entre 0 y 10) y la clasifique de la siguiente manera:
+"""Un almacén da un descuento del 15% si la compra del cliente supera los 1000 Euros. 
+Escribe un programa que pida el total de la compra y calcule el descuento 
+(si aplica) y el total a pagar."""
 
-0 a 4: Suspenso
-
-5 a 6: Aprobado
-
-7 a 8: Notable
-
-9 a 10: Sobresaliente
-
-Muestra un mensaje con la clasificación.
-
-Ejemplo de salida:
-Ingresa tu nota: 8
-Tu clasificación es Notable."""
+# Solicitar el total de la compra.
+ng_compra = float(input("Ingrese el total de la compra: €"))
 
 
-"""Ejercicio 9: Calculadora de IMC
-Escribe un programa que pida al usuario su peso (en kg) y su altura (en metros), y calcule su Índice de Masa Corporal (IMC). Luego, clasifica el IMC según la siguiente tabla:
-
-IMC < 18.5: Bajo peso
-
-18.5 <= IMC < 25: Peso normal
-
-25 <= IMC < 30: Sobrepeso
-
-IMC >= 30: Obesidad
-
-Muestra un mensaje con el IMC y la clasificación.
-
-Ejemplo de salida:
-Ingresa tu peso en kg: 70
-Ingresa tu altura en metros: 1.75
-Tu IMC es 22.86, lo que se clasifica como Peso normal."""
+# Determinar si se aplica el descuento y el total a pagar.
+if ng_compra > 1000:
+    total_descontado = round(ng_compra * 0.85, 2)
+    print(f"El total de la compra, una vez aplicado el descuento, es {total_descontado}€")
+else:
+    print(f"El total a pagar es {round(ng_compra, 2)}€")
 
 
-"""Ejercicio 10: Juego de adivinanza
-Escribe un programa que genere un número aleatorio entre 1 y 100, y pida al usuario que adivine el número. El programa debe dar pistas al usuario indicando si el número ingresado es mayor o menor que el número generado. El programa debe continuar hasta que el usuario adivine el número correcto.
+"""Escribe un programa que pida la edad del usuario y clasifique a las personas en diferentes categorías (niño, adolescente, adulto, adulto mayor). Supón los siguientes rangos de edad:
 
-Ejemplo de salida:
-Adivina el número (entre 1 y 100): 50
-El número es mayor que 50.
-Adivina el número (entre 1 y 100): 75
-El número es menor que 75.
-Adivina el número (entre 1 y 100): 63
-¡Correcto! El número era 63."""
+Niño: Menos de 13 años.
+Adolescente: De 13 a 19 años.
+Adulto: De 20 a 64 años.
+Adulto mayor: 65 años o más."""
+
+# Pedir la edad.
+edad = int(input("Introduzca su edad: "))
+
+# Clasificar en diferentes categorías.
+if edad < 13:
+    print("Eres un niño.")
+else:
+    if edad < 19:
+        print("Eres un adolescente.")
+    else:
+        if edad < 64:
+            print("Eres un adulto.")
+        else:
+            print("Eres un adulto mayor.")
+
+"""Escribe un programa que sugiera qué ponerse basado en la temperatura actual 
+(en grados Celsius) que el usuario introduce. Considera:
+
+Menos de 10°C: Abrigo y bufanda.
+De 10°C a 20°C: Suéter ligero.
+Más de 20°C: Camiseta."""
+
+# Pedir temperatura.
+temperatura = int(input("Introduce la temperatura: "))
+
+# Sugerencia de ropa.
+if temperatura < 10:
+    print("Deberías ponerte un abrigo o bufanda.")
+else:
+    if temperatura < 20:
+        print("Deberías ponerte un suéter ligero.")
+    else:
+        if temperatura > 20:
+            print("Deberías ponerte una camiseta.")
+        else:
+            print("Temperatura no válida.")
