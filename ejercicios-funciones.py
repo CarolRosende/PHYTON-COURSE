@@ -81,5 +81,44 @@ total_vocales = contar_vocales(frase)
 
 print(total_vocales)
 
+"""5. Número perfecto
+Un número perfecto es aquel cuya suma de sus divisores (excluyendo el propio número) es igual al número. 
+Crea una función llamada es_perfecto que determine si un número es perfecto o no."""
 
+def es_perfecto(num1):
+    suma_divisores = 0
+    for i in range(1, num1):
+        if num1 % i == 0:
+            suma_divisores += i
+    return suma_divisores == num1
 
+num1 = int(input("Introduce el número: "))
+
+if es_perfecto(num1):
+    print("El número es perfecto.")
+else:
+    print("El número no es perfecto.")
+
+"""6. Generador de tablas de multiplicar
+Escribe una función tabla_multiplicar que reciba un número y muestre su tabla de multiplicar del 1 al 10. 
+Pide un número al usuario y muestra su tabla usando la función."""
+
+def tabla_multiplicar(num2):
+    for i in range(1, 11):
+        resultado_multiplicar = num2 * i
+        print(num2, "*", i, "=", resultado_multiplicar)
+
+num2 = int(input("Introduce el número: "))
+tabla_multiplicar(num2)
+
+"""7. Inversor de cadena
+Crea una función llamada invertir_cadena que recibe una cadena y devuelve la cadena invertida. 
+Luego, pide una frase al usuario y muestra el resultado."""
+
+def invertir_cadena(frase):
+    return frase[::-1]
+
+frase = input("Introduce la frase: ")
+
+resultado1 = invertir_cadena(frase)
+print(resultado1)
