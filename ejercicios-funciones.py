@@ -122,3 +122,37 @@ frase = input("Introduce la frase: ")
 
 resultado1 = invertir_cadena(frase)
 print(resultado1)
+
+"""8. Verificación de contraseña
+Escribe una función verificar_contraseña que reciba una contraseña y verifique si cumple las siguientes condiciones:
+
+Al menos 8 caracteres.
+Contiene mayúsculas y minúsculas.
+Contiene al menos un número.
+Luego, pide una contraseña al usuario y verifica si es válida o no."""
+
+def verificar_contraseña(contraseña):
+    if len(contraseña) < 8:
+        return "Contraseña no válida."
+    
+    tiene_mayúscula = False
+    tiene_minúscula = False
+    tiene_número = False
+    
+    for letra in contraseña:
+        if letra.isupper():
+            tiene_mayúscula = True
+        elif letra.islower():
+            tiene_minúscula = True
+        elif letra.isdigit():
+            tiene_número = True
+    
+    if tiene_mayúscula and tiene_minúscula and tiene_número:
+        return "Contraseña válida."
+    else:
+        return "Contraseña no válida: debe tener mayúsculas, minúsculas y al menos un número."
+
+contraseña = input("Introduce una contraseña: ")
+
+resultado = verificar_contraseña(contraseña)
+print(resultado)
